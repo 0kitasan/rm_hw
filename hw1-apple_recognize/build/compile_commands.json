@@ -1,7 +1,7 @@
 [
 {
-  "directory": "/home/xyt/rm_hw/hw1/build",
-  "command": "/usr/bin/g++  -isystem /usr/local/include/opencv4 -g -std=gnu++11 -o CMakeFiles/apple.dir/main.cpp.o -c /home/xyt/rm_hw/hw1/main.cpp",
-  "file": "/home/xyt/rm_hw/hw1/main.cpp"
+  "directory": "/home/xyt/rm_hw/hw1-apple_recognize/build",
+  "command": "/usr/bin/g++  -isystem /usr/local/include/opencv4 -g -std=gnu++11 -o CMakeFiles/apple.dir/main.cpp.o -c /home/xyt/rm_hw/hw1-apple_recognize/main.cpp",
+  "file": "/home/xyt/rm_hw/hw1-apple_recognize/main.cpp"
 }
 ]

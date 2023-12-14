@@ -1,7 +1,7 @@
 [
 {
-  "directory": "/home/xyt/rm_hw/hw2/build",
-  "command": "/usr/bin/g++  -isystem /usr/local/include/opencv4 -g -std=gnu++11 -o CMakeFiles/plate.dir/main.cpp.o -c /home/xyt/rm_hw/hw2/main.cpp",
-  "file": "/home/xyt/rm_hw/hw2/main.cpp"
+  "directory": "/home/xyt/rm_hw/hw2-plate_recognize/build",
+  "command": "/usr/bin/g++  -isystem /usr/local/include/opencv4 -g -std=gnu++11 -o CMakeFiles/plate.dir/main.cpp.o -c /home/xyt/rm_hw/hw2-plate_recognize/main.cpp",
+  "file": "/home/xyt/rm_hw/hw2-plate_recognize/main.cpp"
 }
 ]

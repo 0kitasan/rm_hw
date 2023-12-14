@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/xyt/rm_hw/hw1/build"
+			"value" : "/home/xyt/rm_hw/hw1-apple_recognize/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -595,7 +595,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/xyt/rm_hw/hw1"
+			"value" : "/home/xyt/rm_hw/hw1-apple_recognize"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1155,7 +1155,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/xyt/rm_hw/hw1/build"
+			"value" : "/home/xyt/rm_hw/hw1-apple_recognize/build"
 		},
 		{
 			"name" : "apple_IS_TOP_LEVEL",
@@ -1179,7 +1179,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/xyt/rm_hw/hw1"
+			"value" : "/home/xyt/rm_hw/hw1-apple_recognize"
 		}
 	],
 	"kind" : "cache",

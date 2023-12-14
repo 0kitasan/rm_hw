@@ -1,5 +1,6 @@
-CMakeFiles/plate.dir/main.cpp.o: /home/xyt/rm_hw/hw2/main.cpp \
- /usr/include/stdc-predef.h /usr/include/assert.h /usr/include/features.h \
+CMakeFiles/plate.dir/main.cpp.o: \
+ /home/xyt/rm_hw/hw2-plate_recognize/main.cpp /usr/include/stdc-predef.h \
+ /usr/include/assert.h /usr/include/features.h \
  /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/bits/timesize.h \

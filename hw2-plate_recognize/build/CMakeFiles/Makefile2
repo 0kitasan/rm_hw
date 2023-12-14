@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/xyt/rm_hw/hw2
+CMAKE_SOURCE_DIR = /home/xyt/rm_hw/hw2-plate_recognize
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/xyt/rm_hw/hw2/build
+CMAKE_BINARY_DIR = /home/xyt/rm_hw/hw2-plate_recognize/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -81,14 +81,14 @@ clean: CMakeFiles/plate.dir/clean
 CMakeFiles/plate.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/plate.dir/build.make CMakeFiles/plate.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/plate.dir/build.make CMakeFiles/plate.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xyt/rm_hw/hw2/build/CMakeFiles --progress-num=1,2 "Built target plate"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xyt/rm_hw/hw2-plate_recognize/build/CMakeFiles --progress-num=1,2 "Built target plate"
 .PHONY : CMakeFiles/plate.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/plate.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xyt/rm_hw/hw2/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xyt/rm_hw/hw2-plate_recognize/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/plate.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xyt/rm_hw/hw2/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xyt/rm_hw/hw2-plate_recognize/build/CMakeFiles 0
 .PHONY : CMakeFiles/plate.dir/rule
 
 # Convenience name for target.

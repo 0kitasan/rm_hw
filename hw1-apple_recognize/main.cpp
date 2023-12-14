@@ -9,7 +9,7 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <vector>
 int main() {
-  cv::Mat img = cv::imread("/home/xyt/rm_hw/hw1/apple.png");
+  cv::Mat img = cv::imread("../apple.png");
   assert(!img.empty());
   // cv::imshow("source", img);
   cv::Mat hsv;
@@ -57,9 +57,9 @@ int main() {
   }
 
   cv::drawContours(img, all_contours, n, cv::Scalar(0, 255, 0), 2);
-  cv::rectangle(img, boundRect, cv::Scalar(0, 255, 0), 2);
+  cv::rectangle(img, boundRect, cv::Scalar(255, 0, 0), 2);
   cv::imshow("output", img);
-  cv::imwrite("output.png", img);
+  cv::imwrite("../output_apple.png", img);
   cv::waitKey(0);
   return 0;
 }

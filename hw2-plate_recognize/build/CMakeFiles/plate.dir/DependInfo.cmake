@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/xyt/rm_hw/hw2/main.cpp" "CMakeFiles/plate.dir/main.cpp.o" "gcc" "CMakeFiles/plate.dir/main.cpp.o.d"
+  "/home/xyt/rm_hw/hw2-plate_recognize/main.cpp" "CMakeFiles/plate.dir/main.cpp.o" "gcc" "CMakeFiles/plate.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links.

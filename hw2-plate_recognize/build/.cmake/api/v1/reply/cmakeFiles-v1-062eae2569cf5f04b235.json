@@ -151,8 +151,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/xyt/rm_hw/hw1/build",
-		"source" : "/home/xyt/rm_hw/hw1"
+		"build" : "/home/xyt/rm_hw/hw2-plate_recognize/build",
+		"source" : "/home/xyt/rm_hw/hw2-plate_recognize"
 	},
 	"version" : 
 	{

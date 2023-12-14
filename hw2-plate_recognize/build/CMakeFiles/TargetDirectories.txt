@@ -1,0 +1,3 @@
+/home/xyt/rm_hw/hw2/build/CMakeFiles/plate.dir
+/home/xyt/rm_hw/hw2/build/CMakeFiles/edit_cache.dir
+/home/xyt/rm_hw/hw2/build/CMakeFiles/rebuild_cache.dir

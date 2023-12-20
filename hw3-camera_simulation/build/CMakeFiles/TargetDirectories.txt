@@ -1,0 +1,3 @@
+/home/xyt/rm_hw/hw3-camera_simulation/build/CMakeFiles/camera.dir
+/home/xyt/rm_hw/hw3-camera_simulation/build/CMakeFiles/edit_cache.dir
+/home/xyt/rm_hw/hw3-camera_simulation/build/CMakeFiles/rebuild_cache.dir

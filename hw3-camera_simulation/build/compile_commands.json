@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/xyt/rm_hw/hw3-camera_simulation/build",
+  "command": "/usr/bin/g++  -isystem /usr/local/include/opencv4 -g -std=gnu++11 -o CMakeFiles/camera.dir/main.cpp.o -c /home/xyt/rm_hw/hw3-camera_simulation/main.cpp",
+  "file": "/home/xyt/rm_hw/hw3-camera_simulation/main.cpp"
+}
+]

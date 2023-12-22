@@ -50,28 +50,41 @@ void Cam::InParam_Set() {
 
 void Cam::OutParam_Calc() {
   Eigen::Matrix3d PoseMat = CamPose.toRotationMatrix();
-  OutParam_transform.linear() = PoseMat;
-  OutParam_transform.translation() = -PoseMat * CamPosition;
-  // OutParam_transform.translation() = CamPosition;
+  OutParam_transform.linear() = PoseMat.transpose();
+  OutParam_transform.translation() = -PoseMat.transpose() * CamPosition;
+  std::cout << "Trans=" << OutParam_transform.matrix() << std::endl;
+  // 这里比对一下两种方法，
+  // 要特别注意的是，由于旋转矩阵作用的对象和文档上似乎有所差别，需要进行转置
+  Eigen::Matrix4d OutParam = Eigen::Matrix4d::Zero();
+  Eigen::Matrix3d Rotate = CamPose.matrix();
+  OutParam.block(0, 0, 3, 3) = Rotate.transpose();
+  OutParam.block(0, 3, 3, 1) = -Rotate.transpose() * CamPosition;
+  OutParam(3, 3) = 1;
+  std::cout << "OutParam=" << OutParam << std::endl;
 }
 
 void Cam::Proj_Calc() {
   InParam_Set();
   OutParam_Calc();
   Eigen::Vector4d WorldCoord;
-  Eigen::Vector3d CamCoord;
+  Eigen::Vector4d CamCoord;
+  Eigen::Vector3d PicCoord;
   int x, y, x1, y1;
-  int x0 = 800, y0 = 200;
+  int x0 = 350, y0 = 100;
   for (int i = 0; i < pointnum; i++) {
     WorldCoord << Data_3D[i][0], Data_3D[i][1], Data_3D[i][2], 1.;
-    CamCoord = InParam * OutParam_transform.matrix() * WorldCoord;
-    // std::cout << "MatRes=" << CamCoord << std::endl;
-    x = static_cast<int>(CamCoord[0] / CamCoord[2]);
-    y = static_cast<int>(CamCoord[1] / CamCoord[2]);
+    CamCoord = OutParam_transform.matrix() * WorldCoord;
+    PicCoord = InParam * (CamCoord / CamCoord[2]);
+    // std::cout << "Cam=" << CamCoord[2] << std::endl;
+    // std::cout << "Pic=" << PicCoord[2] << std::endl;
+    x = static_cast<int>(PicCoord[0] / PicCoord[2]);
+    y = static_cast<int>(PicCoord[1] / PicCoord[2]);
     x1 = x + x0;
     y1 = y + y0;
-    cv::Point center(width - y1, height - x1);
+    cv::Point center(x1, y1);
+    // cv::Point center(width - y1, height - x1);
     // 这里不知道为什么y和x都要反一下，很抽象
+    // 原因：之前旋转矩阵没有转置，CamPosition不变，导致出现了某些问题，图像看起来像是另一个角度拍摄的
     cv::circle(Background, center, 1, cv::Scalar(0, 0, 255), 2);
   }
   cv::imshow("result", Background);

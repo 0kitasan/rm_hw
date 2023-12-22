@@ -26,9 +26,6 @@ private:
   size_t width, height, pointnum;
   cv::Mat Background = cv::Mat::zeros(height, width, CV_8UC3);
   std::vector<std::vector<double>> Data_3D; // 初始化时设定
-  cv::Mat Data_2D_src = cv::Mat::zeros(2, pointnum, CV_64F);
-
-  cv::Mat Data_2D_dst = cv::Mat::zeros(2, pointnum, CV_8U);
   void InParam_Set();
   void OutParam_Calc();
 

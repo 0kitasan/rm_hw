@@ -21,7 +21,7 @@ int main() {
 
   Cam cam(2000, 1000, data_3D);
   cam.Proj_Calc();
-  std::string ResFile = "../Res.jpg";
+  std::string ResFile = "../result.jpg";
   cam.Save_Img(ResFile);
   cv::waitKey(0);
 

@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named Cam
+
+# Build rule for target.
+Cam: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Cam
+.PHONY : Cam
+
+# fast build rule for target.
+Cam/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cam.dir/build.make CMakeFiles/Cam.dir/build
+.PHONY : Cam/fast
+
+#=============================================================================
 # Target rules for targets named camera
 
 # Build rule for target.
@@ -128,6 +141,30 @@ camera: cmake_check_build_system
 camera/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/camera.dir/build.make CMakeFiles/camera.dir/build
 .PHONY : camera/fast
+
+CamSim.o: CamSim.cpp.o
+.PHONY : CamSim.o
+
+# target to build an object file
+CamSim.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cam.dir/build.make CMakeFiles/Cam.dir/CamSim.cpp.o
+.PHONY : CamSim.cpp.o
+
+CamSim.i: CamSim.cpp.i
+.PHONY : CamSim.i
+
+# target to preprocess a source file
+CamSim.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cam.dir/build.make CMakeFiles/Cam.dir/CamSim.cpp.i
+.PHONY : CamSim.cpp.i
+
+CamSim.s: CamSim.cpp.s
+.PHONY : CamSim.s
+
+# target to generate assembly for a file
+CamSim.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cam.dir/build.make CMakeFiles/Cam.dir/CamSim.cpp.s
+.PHONY : CamSim.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -161,7 +198,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Cam"
 	@echo "... camera"
+	@echo "... CamSim.o"
+	@echo "... CamSim.i"
+	@echo "... CamSim.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

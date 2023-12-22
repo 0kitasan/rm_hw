@@ -1,0 +1,2 @@
+/usr/bin/ar qc libCam.a CMakeFiles/Cam.dir/CamSim.cpp.o
+/usr/bin/ranlib libCam.a

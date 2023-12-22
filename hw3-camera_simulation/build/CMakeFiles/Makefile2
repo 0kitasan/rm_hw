@@ -63,6 +63,7 @@ CMAKE_BINARY_DIR = /home/xyt/rm_hw/hw3-camera_simulation/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/Cam.dir/all
 all: CMakeFiles/camera.dir/all
 .PHONY : all
 
@@ -71,8 +72,35 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/Cam.dir/clean
 clean: CMakeFiles/camera.dir/clean
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/Cam.dir
+
+# All Build rule for target.
+CMakeFiles/Cam.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cam.dir/build.make CMakeFiles/Cam.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cam.dir/build.make CMakeFiles/Cam.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xyt/rm_hw/hw3-camera_simulation/build/CMakeFiles --progress-num=1,2 "Built target Cam"
+.PHONY : CMakeFiles/Cam.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Cam.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xyt/rm_hw/hw3-camera_simulation/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Cam.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xyt/rm_hw/hw3-camera_simulation/build/CMakeFiles 0
+.PHONY : CMakeFiles/Cam.dir/rule
+
+# Convenience name for target.
+Cam: CMakeFiles/Cam.dir/rule
+.PHONY : Cam
+
+# clean rule for target.
+CMakeFiles/Cam.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cam.dir/build.make CMakeFiles/Cam.dir/clean
+.PHONY : CMakeFiles/Cam.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/camera.dir
@@ -81,7 +109,7 @@ clean: CMakeFiles/camera.dir/clean
 CMakeFiles/camera.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/camera.dir/build.make CMakeFiles/camera.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/camera.dir/build.make CMakeFiles/camera.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xyt/rm_hw/hw3-camera_simulation/build/CMakeFiles --progress-num=1,2 "Built target camera"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xyt/rm_hw/hw3-camera_simulation/build/CMakeFiles --progress-num=3,4 "Built target camera"
 .PHONY : CMakeFiles/camera.dir/all
 
 # Build rule for subdir invocation for target.

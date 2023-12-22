@@ -52,9 +52,7 @@ void Cam::OutParam_Calc() {
   Eigen::Matrix3d PoseMat = CamPose.toRotationMatrix();
   OutParam_transform.linear() = PoseMat;
   OutParam_transform.translation() = -PoseMat * CamPosition;
-  //  std::cout << "Res1=" << OutParam_transform.matrix() << std::endl;
   // OutParam_transform.translation() = CamPosition;
-  // std::cout << "Res2=" << OutParam_transform.matrix() << std::endl;
 }
 
 void Cam::Proj_Calc() {
@@ -62,44 +60,19 @@ void Cam::Proj_Calc() {
   OutParam_Calc();
   Eigen::Vector4d WorldCoord;
   Eigen::Vector3d CamCoord;
-
+  int x, y, x1, y1;
+  int x0 = 800, y0 = 200;
   for (int i = 0; i < pointnum; i++) {
     WorldCoord << Data_3D[i][0], Data_3D[i][1], Data_3D[i][2], 1.;
     CamCoord = InParam * OutParam_transform.matrix() * WorldCoord;
     // std::cout << "MatRes=" << CamCoord << std::endl;
-    // int x=static_cast<int>(CamCoord[0] / CamCoord[2]);
-    // int y=static_cast<int>(CamCoord[1] / CamCoord[2]);
-    Data_2D_src.at<double>(0, i) = CamCoord[0] / CamCoord[2]; // 存储二维的x坐标
-    Data_2D_src.at<double>(1, i) = CamCoord[1] / CamCoord[2]; // 存储二维的y坐标
-    std::cout << CamCoord[0] / CamCoord[2] << " " << CamCoord[1] / CamCoord[2]
-              << std::endl;
-  }
-  // double类型的0矩阵(opencv)
-  Data_2D_dst = cv::Mat::zeros(2, pointnum, CV_64F);
-}
-
-void Cam::Img_Normalize() {
-  cv::normalize(Data_2D_src.row(0), Data_2D_dst.row(0), 0, width,
-                cv::NORM_MINMAX, CV_8U);
-  cv::normalize(Data_2D_src.row(1), Data_2D_dst.row(1), 0, height,
-                cv::NORM_MINMAX, CV_8U);
-}
-
-void Cam::Show_Img() {
-  Proj_Calc();
-  // Data_2D_src.copyTo(Data_2D_dst);
-  Img_Normalize();
-  for (int i = 0; i < pointnum; i++) {
-    // int x = static_cast<int>(Data_2D_dst.at<double>(0, i));
-    // int y = static_cast<int>(Data_2D_dst.at<double>(1, i));
-    int x = Data_2D_dst.at<int>(0, i);
-    int y = Data_2D_dst.at<int>(1, i);
-    // int x0 = 800;
-    // int y0 = 200;
-    // cv::Point center(x0 + x, height - (y + y0));
-    cv::Point center(x, height - y);
-    // ocv图像原点在左上角，x正方向向右，y正方向向下
-    cv::circle(Background, center, 1, cv::Scalar(0, 0, 255), 1);
+    x = static_cast<int>(CamCoord[0] / CamCoord[2]);
+    y = static_cast<int>(CamCoord[1] / CamCoord[2]);
+    x1 = x + x0;
+    y1 = y + y0;
+    cv::Point center(width - y1, height - x1);
+    // 这里不知道为什么y和x都要反一下，很抽象
+    cv::circle(Background, center, 1, cv::Scalar(0, 0, 255), 2);
   }
   cv::imshow("result", Background);
 }

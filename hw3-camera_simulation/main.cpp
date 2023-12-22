@@ -18,17 +18,11 @@ int main() {
   std::string FileName = "../points.txt";
   std::vector<std::vector<double>> data_3D;
   FileParse(FileName, data_3D, 2);
-  for (int i = 0; i < 5; i++) {
-    for (int j = 0; j < 3; j++) {
-      // std::cout << data_3D[i][j] << " ";
-    }
-    // std::cout << std::endl;
-  }
 
   Cam cam(2000, 1000, data_3D);
-  cam.Show_Img();
-  std::string OutpuFile = "../Res2.jpg";
-  cam.Save_Img(OutpuFile);
+  cam.Proj_Calc();
+  std::string ResFile = "../Res.jpg";
+  cam.Save_Img(ResFile);
   cv::waitKey(0);
 
   return 0;

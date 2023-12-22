@@ -31,11 +31,10 @@ private:
   cv::Mat Data_2D_dst = cv::Mat::zeros(2, pointnum, CV_8U);
   void InParam_Set();
   void OutParam_Calc();
-  void Proj_Calc();
-  void Img_Normalize();
 
 public:
   Cam(size_t width_, size_t height_, std::vector<std::vector<double>> Data_3D_);
-  void Show_Img();
+  void Proj_Calc();
+  // void Show_Img();
   void Save_Img(std::string filename);
 };
